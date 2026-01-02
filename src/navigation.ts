@@ -33,9 +33,7 @@ export const footerData = {
     // 虽然只有一个 Archive (即 Tags)，但单独占一列会让排版显得很透气、很高级
     {
       title: 'Explore',
-      links: [
-        { text: 'Archive', href: '/tags' },
-      ],
+      links: [{ text: 'Archive', href: '/tags' }],
     },
     // 【第3列】外部连接 (Connect)
     {
