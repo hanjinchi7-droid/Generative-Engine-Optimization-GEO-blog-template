@@ -1,8 +1,8 @@
 import path from 'path';
 import { fileURLToPath } from 'url';
+import fs from 'fs'; 
 
 import { defineConfig } from 'astro/config';
-
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
 import mdx from '@astrojs/mdx';
@@ -12,19 +12,26 @@ import compress from 'astro-compress';
 import type { AstroIntegration } from 'astro';
 
 import astrowind from './vendor/integration';
-
 import { readingTimeRemarkPlugin, responsiveTablesRehypePlugin, lazyImagesRehypePlugin } from './src/utils/frontmatter';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+
+const configYaml = fs.readFileSync(path.resolve(__dirname, './src/config.yaml'), 'utf8');
+const siteMatch = configYaml.match(/site:\s*['"]?([^'"\n]+)['"]?/);
+const baseMatch = configYaml.match(/basePath:\s*['"]?([^'"\n]+)['"]?/);
+
+const SITE_URL = siteMatch ? siteMatch[1].trim() : 'https://example.com';
+const BASE_PATH = baseMatch ? baseMatch[1].trim() : '/';
+
 
 const hasExternalScripts = false;
 const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroIntegration)[] = []) =>
   hasExternalScripts ? (Array.isArray(items) ? items.map((item) => item()) : [items()]) : [];
 
 export default defineConfig({
-  site: 'https://hanjinchi7-droid.github.io',
-
-  base: '/recomby-template/',
+  site: SITE_URL,
+  base: BASE_PATH,
 
   build: {
     assets: 'assets',
@@ -42,15 +49,8 @@ export default defineConfig({
       include: {
         tabler: ['*'],
         'flat-color-icons': [
-          'template',
-          'gallery',
-          'approval',
-          'document',
-          'advertising',
-          'currency-exchange',
-          'voice-presentation',
-          'business-contact',
-          'database',
+          'template', 'gallery', 'approval', 'document', 'advertising',
+          'currency-exchange', 'voice-presentation', 'business-contact', 'database',
         ],
       },
     }),

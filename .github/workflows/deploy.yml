@@ -1,19 +1,15 @@
 name: Deploy to GitHub Pages
 
 on:
-  # Trigger the workflow every time you push to the main branch
   push:
     branches: [ main ]
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# Allow GITHUB_TOKEN to perform the deployment
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# This concurrency setting is required for GitHub Pages
 concurrency:
   group: "pages"
   cancel-in-progress: false
@@ -22,28 +18,21 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout your repository using git
+      - name: Checkout
         uses: actions/checkout@v4
       
-      # 👇 1. 安装 Node.js (使用最新的 LTS 版本)
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: 'npm'
 
-      # 👇 2. 安装依赖
       - name: Install dependencies
         run: npm ci
 
-      # 👇 3. 构建网站
-      # 这里运行 npm run build，它会自动读取你的 astro.config.ts 配置
-      # 这样实现了“配置与构建分离”，最适合做模版
-      - name: Build the site
+      - name: Build site
         run: npm run build
 
-      # 👇 4. 上传构建产物
-      # Astro 默认生成在 ./dist 目录
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
