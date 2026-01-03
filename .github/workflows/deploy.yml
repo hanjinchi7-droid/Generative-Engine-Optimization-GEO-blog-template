@@ -25,11 +25,29 @@ jobs:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
       
-      - name: Install, build, and upload your site
-        uses: withastro/action@v2
-        # with:
-          # path: . # If your Astro project is not in the root (e.g., in /templete), change this to ./templete
-          # package-manager: npm # If not automatically detected, you can force specify npm
+      # 👇 1. 安装 Node.js (使用最新的 LTS 版本)
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      # 👇 2. 安装依赖
+      - name: Install dependencies
+        run: npm ci
+
+      # 👇 3. 构建网站
+      # 这里运行 npm run build，它会自动读取你的 astro.config.ts 配置
+      # 这样实现了“配置与构建分离”，最适合做模版
+      - name: Build the site
+        run: npm run build
+
+      # 👇 4. 上传构建产物
+      # Astro 默认生成在 ./dist 目录
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
 
   deploy:
     needs: build
