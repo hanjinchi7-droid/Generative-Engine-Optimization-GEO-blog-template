@@ -26,6 +26,10 @@ export default defineConfig({
 
   base: '/recomby-template',
 
+  build: {
+    assets: 'assets',
+  },
+  
   output: 'static',
 
   integrations: [
