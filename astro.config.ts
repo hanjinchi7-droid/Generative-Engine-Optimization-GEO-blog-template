@@ -29,7 +29,7 @@ export default defineConfig({
   build: {
     assets: 'assets',
   },
-  
+
   output: 'static',
 
   integrations: [
