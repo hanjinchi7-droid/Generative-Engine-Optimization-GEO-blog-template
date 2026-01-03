@@ -6,78 +6,52 @@ import Steps2 from '~/components/widgets/Steps2.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
-const metadata = {
-  title: 'About Recomby.ai',
-};
----
+// -----------------------------------------------------------------------
+// ⚙️ About Page Configuration (Edit content here)
+// -----------------------------------------------------------------------
 
-<Layout metadata={metadata}>
-  <Hero
-    tagline="About Recomby.ai"
-    image={{
+const aboutData = {
+  // 1. Page Metadata
+  metadata: {
+    title: 'About Recomby.ai',
+  },
+
+  // 2. Hero Section
+  hero: {
+    tagline: 'About Recomby.ai',
+    // Note: HTML tags like <br/> and <span> are supported here for styling
+    title: 'In the age of AI Search, <br /> <span class="text-accent dark:text-white highlight"> Precision Beats Power</span>',
+    subtitle: 'Recomby.ai is an innovative technology company specializing in <strong>AI Search Optimization (GEO)</strong> and <strong>Agent API Infrastructure</strong>. We help "the best match" defeat "the loudest voice."',
+    image: {
       src: 'https://images.unsplash.com/photo-1604871000636-074fa5117945?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
       alt: 'Abstract geometric data structure',
-    }}
-  >
-    <Fragment slot="title">
-      In the age of AI Search, <br />
-      <span class="text-accent dark:text-white highlight"> Precision Beats Power</span>
-    </Fragment>
+    },
+  },
 
-    <Fragment slot="subtitle">
-      Recomby.ai is an innovative technology company specializing in <strong>AI Search Optimization (GEO)</strong> and <strong
-        >Agent API Infrastructure</strong
-      >. We help "the best match" defeat "the loudest voice."
-    </Fragment>
-  </Hero>
+  // 3. Core Philosophy (4 Grid Items)
+  corePhilosophy: {
+    title: 'Ready for the AI Era?',
+    subtitle: 'Our core philosophy defines how we build for the future.',
+    items: [
+      { title: 'Agent-First', description: 'Philosophy', icon: 'tabler:robot' },
+      { title: 'Precision', description: 'Focus', icon: 'tabler:target' },
+      { title: 'Structured', description: 'Output', icon: 'tabler:box-model-2' },
+      { title: 'Best Match', description: 'Goal', icon: 'tabler:trophy' },
+    ],
+  },
 
-  <Features2
-    title="Ready for the AI Era?"
-    subtitle="Our core philosophy defines how we build for the future."
-    columns={4}
-    items={[
-      {
-        title: 'Agent-First',
-        description: 'Philosophy',
-        icon: 'tabler:robot',
-      },
-      {
-        title: 'Precision',
-        description: 'Focus',
-        icon: 'tabler:target',
-      },
-      {
-        title: 'Structured',
-        description: 'Output',
-        icon: 'tabler:box-model-2',
-      },
-      {
-        title: 'Best Match',
-        description: 'Goal',
-        icon: 'tabler:trophy',
-      },
-    ]}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-slate-900"></div>
-    </Fragment>
-  </Features2>
-
-  <Features3
-    columns={2}
-    title="Our Philosophy"
-    isAfterContent={true}
-    items={[
+  // 4. Philosophy Details (Split Layout)
+  philosophyDetails: {
+    title: 'Our Philosophy',
+    items: [
       {
         title: 'Best Match Defeats the Best',
-        description:
-          'Being the right answer matters more than being the biggest player. We help you win by relevance, not just ad spend.',
+        description: 'Being the right answer matters more than being the biggest player. We help you win by relevance, not just ad spend.',
         icon: 'tabler:trophy',
       },
       {
         title: 'Where Precision Beats Power',
-        description:
-          'In the age of AI agents, targeted relevance wins over broad reach. We focus on high-value, specific matching.',
+        description: 'In the age of AI agents, targeted relevance wins over broad reach. We focus on high-value, specific matching.',
         icon: 'tabler:target',
       },
       {
@@ -90,51 +64,44 @@ const metadata = {
         description: 'From Human-Oriented to Agent-Oriented. Build for intelligent agents, not just human visitors.',
         icon: 'tabler:robot',
       },
-    ]}
-    image={{
+    ],
+    image: {
       src: 'https://images.unsplash.com/photo-1620121692029-d088224ddc74?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
       alt: 'Structured data blocks',
-    }}
-  />
+    },
+  },
 
-  <Features2
-    title="Our Core Services"
-    subtitle="We don't rely on volume or capital, but on making your solution the 'best match' in AI's eyes."
-    columns={3}
-    items={[
+  // 5. Core Services
+  services: {
+    title: 'Our Core Services',
+    subtitle: "We don't rely on volume or capital, but on making your solution the 'best match' in AI's eyes.",
+    items: [
       {
         title: 'AI Search Optimization (GEO)',
-        description:
-          'Optimize your visibility in AI search engines. Consulting for structured data standards (llms.txt, schema).',
+        description: 'Optimize your visibility in AI search engines. Consulting for structured data standards (llms.txt, schema).',
         icon: 'tabler:seo',
       },
       {
         title: 'Agent API Infrastructure',
-        description:
-          'Build reliable data interaction infrastructure. Standardized API interfaces to integrate into AI ecosystems.',
+        description: 'Build reliable data interaction infrastructure. Standardized API interfaces to integrate into AI ecosystems.',
         icon: 'tabler:api',
       },
       {
         title: 'Structured Context',
-        description:
-          'Transform proprietary knowledge into "citable modules" that AI models can understand, trust, and recommend.',
+        description: 'Transform proprietary knowledge into "citable modules" that AI models can understand, trust, and recommend.',
         icon: 'tabler:database',
       },
-    ]}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Features2>
+    ],
+  },
 
-  <Steps2
-    title="Why Recomby.ai?"
-    subtitle="The rules of the game have changed. Traditional SEO is fading; AI recommendation is the future."
-    items={[
+  // 6. Why Choose Us (Steps)
+  whyUs: {
+    title: 'Why Recomby.ai?',
+    subtitle: 'The rules of the game have changed. Traditional SEO is fading; AI recommendation is the future.',
+    items: [
       {
         title: 'The Challenge',
-        description:
-          'Users no longer search for keywords; they describe scenarios. Traditional "loudest voice" marketing fails here.',
+        description: 'Users no longer search for keywords; they describe scenarios. Traditional "loudest voice" marketing fails here.',
         icon: 'tabler:alert-circle',
       },
       {
@@ -147,23 +114,90 @@ const metadata = {
         description: 'Your solution becomes the "default candidate" in AI answers, connecting you with true fans.',
         icon: 'tabler:check',
       },
-    ]}
+    ],
+  },
+
+  // 7. Call to Action (CTA)
+  cta: {
+    title: 'Ready to be found by AI?',
+    subtitle: 'Join the conversation on Reddit or explore our open source projects.',
+    primaryAction: {
+      text: 'Email Us',
+      href: 'mailto:contact@recomby.ai',
+      icon: 'tabler:mail',
+    },
+    secondaryAction: {
+      text: 'Join Reddit',
+      href: 'https://www.reddit.com/r/recomby_ai/',
+      icon: 'tabler:brand-reddit',
+    },
+  },
+};
+
+// -----------------------------------------------------------------------
+// 🧩 Layout Components (Page Structure - No need to edit below)
+// -----------------------------------------------------------------------
+---
+
+<Layout metadata={aboutData.metadata}>
+  <Hero
+    tagline={aboutData.hero.tagline}
+    image={aboutData.hero.image}
+  >
+    <Fragment slot="title" set:html={aboutData.hero.title} />
+    <Fragment slot="subtitle" set:html={aboutData.hero.subtitle} />
+  </Hero>
+
+  <Features2
+    title={aboutData.corePhilosophy.title}
+    subtitle={aboutData.corePhilosophy.subtitle}
+    columns={4}
+    items={aboutData.corePhilosophy.items}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-slate-900"></div>
+    </Fragment>
+  </Features2>
+
+  <Features3
+    columns={2}
+    title={aboutData.philosophyDetails.title}
+    isAfterContent={true}
+    items={aboutData.philosophyDetails.items}
+    image={aboutData.philosophyDetails.image}
+  />
+
+  <Features2
+    title={aboutData.services.title}
+    subtitle={aboutData.services.subtitle}
+    columns={3}
+    items={aboutData.services.items}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+
+  <Steps2
+    title={aboutData.whyUs.title}
+    subtitle={aboutData.whyUs.subtitle}
+    items={aboutData.whyUs.items}
   />
 
   <CallToAction
-    title="Ready to be found by AI?"
-    subtitle="Join the conversation on Reddit or explore our open source projects."
+    title={aboutData.cta.title}
+    subtitle={aboutData.cta.subtitle}
     actions={[
       {
         variant: 'primary',
-        text: 'Email Us',
-        href: 'mailto:contact@recomby.ai',
-        icon: 'tabler:mail',
+        text: aboutData.cta.primaryAction.text,
+        href: aboutData.cta.primaryAction.href,
+        icon: aboutData.cta.primaryAction.icon,
       },
       {
-        text: 'Join Reddit',
-        href: 'https://www.reddit.com/r/recomby_ai/',
-        icon: 'tabler:brand-reddit',
+        text: aboutData.cta.secondaryAction.text,
+        href: aboutData.cta.secondaryAction.href,
+        icon: aboutData.cta.secondaryAction.icon,
       },
     ]}
   />

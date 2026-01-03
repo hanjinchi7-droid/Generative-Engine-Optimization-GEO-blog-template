@@ -8,6 +8,7 @@ import Pagination from '~/components/blog/Pagination.astro';
 // import PostTags from "~/components/blog/Tags.astro";
 
 import { blogListRobots, getStaticPathsBlogList } from '~/utils/blog';
+import { SITE, METADATA } from 'astrowind:config';
 
 export const prerender = true;
 
@@ -37,12 +38,12 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <section class="px-6 sm:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-4xl">
-    <Headline subtitle="Get Recommended by AI, Not Left Behind by the Times"> Recomby.ai </Headline>
+    
+    <Headline subtitle={(SITE as { subtitle?: string })?.subtitle || METADATA?.description}> 
+      {SITE?.name} 
+    </Headline>
+
     <BlogList posts={page.data} />
     <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
-    <!--
-      <PostTags tags={allCategories} class="mb-2" title="Search by Categories:" isCategory />
-      <PostTags tags={allTags}  title="Search by Tags:" />
-    -->
-  </section>
+    </section>
 </Layout>

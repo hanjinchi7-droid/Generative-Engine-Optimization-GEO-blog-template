@@ -1,72 +1,97 @@
+# -----------------------------------------------------------------------
+# ⚙️ Site Configuration
+# Guide: Modify this file to customize the core information of your website.
+# -----------------------------------------------------------------------
+
 site:
-  name: Recomby.ai
-  site: 'https://recomby.ai' # 根据你 navigation.js 的 footer 链接修改
-  base: '/'
-  trailingSlash: false
+  name: 'Recomby.ai'                   # [Required] Your blog name (appears in the header & browser tab)
+  site: 'https://recomby.ai'           # [Required] Your live domain (essential for SEO and Sitemap)
+  base: '/'                            # [Default]  Sub-path (usually '/', unless deployed at example.com/blog)
+  trailingSlash: false                 # [Default]  Append trailing slash to URLs (recommended: false)
 
-  googleSiteVerificationId: orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M # 如果你有新的验证码，记得替换这里
+  subtitle: 'Get Recommended by AI, Not Left Behind by the Times'  # [Optional] Custom homepage subtitle (fallbacks to SEO description if empty)
 
-# Default SEO metadata
+  googleSiteVerificationId: ''         # [Optional] Google Search Console verification ID (leave empty if unused)
+
+# -----------------------------------------------------------------------
+# 🔍 SEO Metadata (Default)
+# -----------------------------------------------------------------------
 metadata:
   title:
-    default: Recomby.ai # 修改为你的品牌名
-    template: '%s — Recomby.ai' # 修改后缀
-  description: 'Recomby.ai - Empowering your projects with AI solutions.' # 这里的描述建议根据你的具体业务修改，目前是一个占位符
+    default: Recomby.ai                # [Required] Default page title
+    template: '%s — Recomby.ai'        # [Required] Title template (%s = post title, followed by your brand)
+  
+  description: 'Recomby.ai - Empowering your projects with AI solutions.' # [Required] Default site description (used for SEO & social sharing)
+  
   robots:
     index: true
     follow: true
+  
   openGraph:
-    site_name: Recomby.ai # 修改 OG 名称
+    site_name: Recomby.ai              # [Required] OpenGraph site name (for social media)
     images:
-      - url: '~/assets/images/default.png' # 建议后续替换成你自己的 OpenGraph 封面图
+      - url: '~/assets/images/default.png' # [Optional] Default sharing image (ensure this file exists in src/assets/images/)
         width: 1200
         height: 628
     type: website
+  
   twitter:
-    handle: '@recomby_ai' # 根据你的Reddit ID猜测的，如果没有Twitter可以留空或填正确的
+    handle: '@recomby_ai'              # [Optional] Your Twitter/X handle (leave empty if none)
     site: '@recomby_ai'
     cardType: summary_large_image
 
+# -----------------------------------------------------------------------
+# 🌍 Internationalization (i18n)
+# -----------------------------------------------------------------------
 i18n:
   language: en
   textDirection: ltr
 
+# -----------------------------------------------------------------------
+# 🚀 Blog Configuration (App Settings)
+# -----------------------------------------------------------------------
 apps:
   blog:
     isEnabled: true
-    postsPerPage: 6
+    postsPerPage: 6                    # [Default]  Number of posts to show per page
 
     post:
       isEnabled: true
-      permalink: '/%slug%' # Variables: %slug%, %year%, %month%, %day%, %hour%, %minute%, %second%, %category%
+      permalink: '/%slug%'             # [Default]  Post URL structure (recommended '/%slug%')
       robots:
         index: true
 
     list:
       isEnabled: true
-      pathname: '/' # 这里保留原样。但在你的 nav 中 Blog 单独有链接，如果主页不是博客列表，这里可能需要改为 'blog'
+      pathname: '/'                    # [Required] Blog list path ('/' means home is the blog list)
       robots:
         index: true
 
     category:
-      isEnabled: true
-      pathname: 'category'
+      isEnabled: false                 # [Disabled] Set to 'true' if you want to use Categories
+      pathname: 'category'             # [Default]  URL prefix for category pages
       robots:
         index: true
 
     tag:
-      isEnabled: true
-      pathname: 'tag'
+      isEnabled: true                  # [Enabled]  Using Tags for organization
+      pathname: 'tag'                  # [Default]  URL prefix for tag pages
       robots:
-        index: false
+        index: false                   # [SEO]      Generally false for tag pages to avoid duplicate content
 
-    isRelatedPostsEnabled: true
+    isRelatedPostsEnabled: true        # [Optional] Show "Related Posts" at the bottom of articles
     relatedPostsCount: 4
 
+# -----------------------------------------------------------------------
+# 📈 Analytics
+# -----------------------------------------------------------------------
 analytics:
   vendors:
     googleAnalytics:
-      id: null # 如果有 GA ID，填在这里，例如 "G-XXXXXXXXXX"
+      id: null                         # [Optional] Enter your GA4 ID here (e.g., "G-XXXXXXXXXX")
 
+# -----------------------------------------------------------------------
+# 🎨 UI Theme
+# -----------------------------------------------------------------------
 ui:
-  theme: 'system'
+  theme: 'system'                      # [Default]  Options: 'system', 'light', 'dark', 'muted'
