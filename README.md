@@ -2,7 +2,7 @@
 
 > **"In the age of AI Search, Precision Beats Power."**
 
-This repository contains the source code for [Recomby.ai](https://recomby.ai), a high-performance website template built using **[Astro 5.0](https://astro.build/)** and **[Tailwind CSS](https://tailwindcss.com/)**.
+This repository contains the source code for [Recomby.ai](https://blog.recomby.ai), a high-performance website template built using **[Astro 5.0](https://astro.build/)** and **[Tailwind CSS](https://tailwindcss.com/)**.
 
 It is heavily customized to follow **GEO (Generative Engine Optimization)** standards, ensuring content is structured effectively for both human readers and AI agents (ChatGPT, Perplexity, etc.).
 
