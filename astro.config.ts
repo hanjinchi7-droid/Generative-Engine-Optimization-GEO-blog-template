@@ -22,11 +22,9 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
   hasExternalScripts ? (Array.isArray(items) ? items.map((item) => item()) : [items()]) : [];
 
 export default defineConfig({
-
   site: 'https://hanjinchi7-droid.github.io',
 
   base: '/recomby-template',
-
 
   output: 'static',
 

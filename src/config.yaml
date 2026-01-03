@@ -4,39 +4,39 @@
 # -----------------------------------------------------------------------
 
 site:
-  name: 'Recomby.ai'                   # [Required] Your blog name (appears in the header & browser tab)
-  site: 'https://recomby.ai'           # [Required] Your live domain (essential for SEO and Sitemap)
-  base: '/'                            # [Default]  Sub-path (usually '/', unless deployed at example.com/blog)
-  trailingSlash: false                 # [Default]  Append trailing slash to URLs (recommended: false)
+  name: 'Recomby.ai' # [Required] Your blog name (appears in the header & browser tab)
+  site: 'https://recomby.ai' # [Required] Your live domain (essential for SEO and Sitemap)
+  base: '/' # [Default]  Sub-path (usually '/', unless deployed at example.com/blog)
+  trailingSlash: false # [Default]  Append trailing slash to URLs (recommended: false)
 
-  subtitle: 'Get Recommended by AI, Not Left Behind by the Times'  # [Optional] Custom homepage subtitle (fallbacks to SEO description if empty)
+  subtitle: 'Get Recommended by AI, Not Left Behind by the Times' # [Optional] Custom homepage subtitle (fallbacks to SEO description if empty)
 
-  googleSiteVerificationId: ''         # [Optional] Google Search Console verification ID (leave empty if unused)
+  googleSiteVerificationId: '' # [Optional] Google Search Console verification ID (leave empty if unused)
 
 # -----------------------------------------------------------------------
 # 🔍 SEO Metadata (Default)
 # -----------------------------------------------------------------------
 metadata:
   title:
-    default: Recomby.ai                # [Required] Default page title
-    template: '%s — Recomby.ai'        # [Required] Title template (%s = post title, followed by your brand)
-  
+    default: Recomby.ai # [Required] Default page title
+    template: '%s — Recomby.ai' # [Required] Title template (%s = post title, followed by your brand)
+
   description: 'Recomby.ai - Empowering your projects with AI solutions.' # [Required] Default site description (used for SEO & social sharing)
-  
+
   robots:
     index: true
     follow: true
-  
+
   openGraph:
-    site_name: Recomby.ai              # [Required] OpenGraph site name (for social media)
+    site_name: Recomby.ai # [Required] OpenGraph site name (for social media)
     images:
       - url: '~/assets/images/default.png' # [Optional] Default sharing image (ensure this file exists in src/assets/images/)
         width: 1200
         height: 628
     type: website
-  
+
   twitter:
-    handle: '@recomby_ai'              # [Optional] Your Twitter/X handle (leave empty if none)
+    handle: '@recomby_ai' # [Optional] Your Twitter/X handle (leave empty if none)
     site: '@recomby_ai'
     cardType: summary_large_image
 
@@ -53,33 +53,33 @@ i18n:
 apps:
   blog:
     isEnabled: true
-    postsPerPage: 6                    # [Default]  Number of posts to show per page
+    postsPerPage: 6 # [Default]  Number of posts to show per page
 
     post:
       isEnabled: true
-      permalink: '/%slug%'             # [Default]  Post URL structure (recommended '/%slug%')
+      permalink: '/%slug%' # [Default]  Post URL structure (recommended '/%slug%')
       robots:
         index: true
 
     list:
       isEnabled: true
-      pathname: '/'                    # [Required] Blog list path ('/' means home is the blog list)
+      pathname: '/' # [Required] Blog list path ('/' means home is the blog list)
       robots:
         index: true
 
     category:
-      isEnabled: false                 # [Disabled] Set to 'true' if you want to use Categories
-      pathname: 'category'             # [Default]  URL prefix for category pages
+      isEnabled: false # [Disabled] Set to 'true' if you want to use Categories
+      pathname: 'category' # [Default]  URL prefix for category pages
       robots:
         index: true
 
     tag:
-      isEnabled: true                  # [Enabled]  Using Tags for organization
-      pathname: 'tag'                  # [Default]  URL prefix for tag pages
+      isEnabled: true # [Enabled]  Using Tags for organization
+      pathname: 'tag' # [Default]  URL prefix for tag pages
       robots:
-        index: false                   # [SEO]      Generally false for tag pages to avoid duplicate content
+        index: false # [SEO]      Generally false for tag pages to avoid duplicate content
 
-    isRelatedPostsEnabled: true        # [Optional] Show "Related Posts" at the bottom of articles
+    isRelatedPostsEnabled: true # [Optional] Show "Related Posts" at the bottom of articles
     relatedPostsCount: 4
 
 # -----------------------------------------------------------------------
@@ -88,10 +88,10 @@ apps:
 analytics:
   vendors:
     googleAnalytics:
-      id: null                         # [Optional] Enter your GA4 ID here (e.g., "G-XXXXXXXXXX")
+      id: null # [Optional] Enter your GA4 ID here (e.g., "G-XXXXXXXXXX")
 
 # -----------------------------------------------------------------------
 # 🎨 UI Theme
 # -----------------------------------------------------------------------
 ui:
-  theme: 'system'                      # [Default]  Options: 'system', 'light', 'dark', 'muted'
+  theme: 'system' # [Default]  Options: 'system', 'light', 'dark', 'muted'

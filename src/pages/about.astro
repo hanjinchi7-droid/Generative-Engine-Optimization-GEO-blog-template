@@ -20,8 +20,10 @@ const aboutData = {
   hero: {
     tagline: 'About Recomby.ai',
     // Note: HTML tags like <br/> and <span> are supported here for styling
-    title: 'In the age of AI Search, <br /> <span class="text-accent dark:text-white highlight"> Precision Beats Power</span>',
-    subtitle: 'Recomby.ai is an innovative technology company specializing in <strong>AI Search Optimization (GEO)</strong> and <strong>Agent API Infrastructure</strong>. We help "the best match" defeat "the loudest voice."',
+    title:
+      'In the age of AI Search, <br /> <span class="text-accent dark:text-white highlight"> Precision Beats Power</span>',
+    subtitle:
+      'Recomby.ai is an innovative technology company specializing in <strong>AI Search Optimization (GEO)</strong> and <strong>Agent API Infrastructure</strong>. We help "the best match" defeat "the loudest voice."',
     image: {
       src: 'https://images.unsplash.com/photo-1604871000636-074fa5117945?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
       alt: 'Abstract geometric data structure',
@@ -46,12 +48,14 @@ const aboutData = {
     items: [
       {
         title: 'Best Match Defeats the Best',
-        description: 'Being the right answer matters more than being the biggest player. We help you win by relevance, not just ad spend.',
+        description:
+          'Being the right answer matters more than being the biggest player. We help you win by relevance, not just ad spend.',
         icon: 'tabler:trophy',
       },
       {
         title: 'Where Precision Beats Power',
-        description: 'In the age of AI agents, targeted relevance wins over broad reach. We focus on high-value, specific matching.',
+        description:
+          'In the age of AI agents, targeted relevance wins over broad reach. We focus on high-value, specific matching.',
         icon: 'tabler:target',
       },
       {
@@ -78,17 +82,20 @@ const aboutData = {
     items: [
       {
         title: 'AI Search Optimization (GEO)',
-        description: 'Optimize your visibility in AI search engines. Consulting for structured data standards (llms.txt, schema).',
+        description:
+          'Optimize your visibility in AI search engines. Consulting for structured data standards (llms.txt, schema).',
         icon: 'tabler:seo',
       },
       {
         title: 'Agent API Infrastructure',
-        description: 'Build reliable data interaction infrastructure. Standardized API interfaces to integrate into AI ecosystems.',
+        description:
+          'Build reliable data interaction infrastructure. Standardized API interfaces to integrate into AI ecosystems.',
         icon: 'tabler:api',
       },
       {
         title: 'Structured Context',
-        description: 'Transform proprietary knowledge into "citable modules" that AI models can understand, trust, and recommend.',
+        description:
+          'Transform proprietary knowledge into "citable modules" that AI models can understand, trust, and recommend.',
         icon: 'tabler:database',
       },
     ],
@@ -101,7 +108,8 @@ const aboutData = {
     items: [
       {
         title: 'The Challenge',
-        description: 'Users no longer search for keywords; they describe scenarios. Traditional "loudest voice" marketing fails here.',
+        description:
+          'Users no longer search for keywords; they describe scenarios. Traditional "loudest voice" marketing fails here.',
         icon: 'tabler:alert-circle',
       },
       {
@@ -140,10 +148,7 @@ const aboutData = {
 ---
 
 <Layout metadata={aboutData.metadata}>
-  <Hero
-    tagline={aboutData.hero.tagline}
-    image={aboutData.hero.image}
-  >
+  <Hero tagline={aboutData.hero.tagline} image={aboutData.hero.image}>
     <Fragment slot="title" set:html={aboutData.hero.title} />
     <Fragment slot="subtitle" set:html={aboutData.hero.subtitle} />
   </Hero>
@@ -178,11 +183,7 @@ const aboutData = {
     </Fragment>
   </Features2>
 
-  <Steps2
-    title={aboutData.whyUs.title}
-    subtitle={aboutData.whyUs.subtitle}
-    items={aboutData.whyUs.items}
-  />
+  <Steps2 title={aboutData.whyUs.title} subtitle={aboutData.whyUs.subtitle} items={aboutData.whyUs.items} />
 
   <CallToAction
     title={aboutData.cta.title}

@@ -45,14 +45,16 @@ In this template, images are handled in two places: the **Cover Image** and **Bo
 The cover image is defined in the `Frontmatter` at the top of this file. We support two methods:
 
 #### ✅ Method A: Local Images (Recommended)
+
 1.  Save your image file in the project folder: `src/assets/images/`.
 2.  Reference it using the `~/` alias.
-    * Example: `image: '~/assets/images/my-photo.jpg'`
+    - Example: `image: '~/assets/images/my-photo.jpg'`
 3.  **Why?** Astro automatically compresses, resizes, and converts formats (like WebP) for superior performance.
 
 #### ⚡ Method B: Remote URLs
+
 1.  Just paste the full image link.
-    * Example: `image: 'https://images.unsplash.com/photo-123...'`
+    - Example: `image: 'https://images.unsplash.com/photo-123...'`
 2.  **Pros:** No need to upload files locally.
 3.  **Cons:** Loading speed depends on the external server; no automatic optimization.
 
@@ -81,7 +83,7 @@ Here is how to insert images directly into your text.
     ![My Local Image](~/assets/images/default.png)
 
 **Result (What you see):**
-*(This will render your local 'default.png' file)*
+_(This will render your local 'default.png' file)_
 
 ![My Local Image](~/assets/images/default.png)
 
@@ -98,16 +100,19 @@ To ensure your content is selected as an answer by AI engines (like ChatGPT, Per
 ## III. Markdown Syntax Quick Reference
 
 ### Typography
-You can make text **bold**, *italic*, or use `code style` for emphasis.
+
+You can make text **bold**, _italic_, or use `code style` for emphasis.
 
 ### Blockquotes
+
 > This is a blockquote, perfect for highlighting core ideas or quotes.
 
 ### Lists
+
 1.  First point
 2.  Second point
-    * Sub-point A
-    * Sub-point B
+    - Sub-point A
+    - Sub-point B
 
 ## IV. Conclusion
 

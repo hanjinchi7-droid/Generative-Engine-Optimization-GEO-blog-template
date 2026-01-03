@@ -13,9 +13,9 @@ It is heavily customized to follow **GEO (Generative Engine Optimization)** stan
 - **⚡️ High Performance**: Powered by Astro, scoring 100/100 on PageSpeed Insights.
 - **🤖 GEO Ready**: Content structure optimized for AI Search and LLM retrieval.
 - **🛠 Simplified Configuration**:
-    - **Global Settings**: Managed via a single `src/config.yaml`.
-    - **Navigation**: Menu and footer links managed in `src/navigation.ts`.
-    - **Page Config**: Complex pages (like `About`) use a "Local Configuration Object" pattern for easy editing.
+  - **Global Settings**: Managed via a single `src/config.yaml`.
+  - **Navigation**: Menu and footer links managed in `src/navigation.ts`.
+  - **Page Config**: Complex pages (like `About`) use a "Local Configuration Object" pattern for easy editing.
 - **🎨 Tailwind CSS**: Fully responsive design with Dark Mode support.
 - **📝 Markdown/MDX**: Structured blogging system with automatic image optimization.
 - **🖼️ Image Optimization**: Built-in support for next-gen image formats (WebP).
@@ -57,6 +57,7 @@ npm run build
 We have streamlined the configuration process so you don't need to dig into deep code.
 
 ### 1. Global Site Configuration
+
 Edit **`src/config.yaml`** to change site-wide metadata, SEO settings, and feature toggles.
 
 ```yaml
@@ -72,9 +73,11 @@ metadata:
 ```
 
 ### 2. Navigation (Menu & Footer)
+
 Edit **`src/navigation.ts`** to modify the Header links, Footer columns, and Social icons.
 
 ### 3. Page-Specific Configuration (e.g., About Page)
+
 For complex landing pages like `About`, we use a **Local Configuration Object** at the top of the file.
 Go to `src/pages/about.astro` and edit the `aboutData` constant at the top.
 
@@ -164,11 +167,12 @@ We follow strict **AI-Friendly Writing Guidelines** to ensure content is "Best M
 Please refer to the template file in `src/data/post/markdown-style-guide.md` for details.
 
 **Quick Rules:**
+
 1.  **Location**: Create your `.md` files in **`src/data/post/`**.
 2.  **Structure**: Use clear H2/H3 headings.
 3.  **Images**:
-    * **Local**: Place in `src/assets/images/` and reference as `~/assets/images/name.png`.
-    * **Remote**: Use direct URLs.
+    - **Local**: Place in `src/assets/images/` and reference as `~/assets/images/name.png`.
+    - **Remote**: Use direct URLs.
 4.  **Frontmatter**: Always fill in `tags` and `excerpt` accurately for AI indexing.
 
 <br>
