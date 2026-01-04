@@ -34,7 +34,7 @@ export const footerData = {
     {
       title: 'Connect',
       links: [
-        { text: 'GitHub', href: 'https://hanjinchi7-droid.github.io/Generative-Engine-Optimization-GEO-blog-template/' },
+        { text: 'GitHub', href: 'https://github.com/hanjinchi7-droid/Generative-Engine-Optimization-GEO-blog-template' },
         { text: 'Reddit', href: 'https://www.reddit.com/r/recomby_ai/' },
         { text: 'Email', href: 'mailto:contact@recomby.ai' },
       ],
@@ -44,7 +44,7 @@ export const footerData = {
   secondaryLinks: [],
 
   socialLinks: [
-    { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/recomby-ai' },
+    { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/hanjinchi7-droid/Generative-Engine-Optimization-GEO-blog-template' },
     { ariaLabel: 'Reddit', icon: 'tabler:brand-reddit', href: 'https://www.reddit.com/r/recomby_ai/' },
     { ariaLabel: 'Email', icon: 'tabler:mail', href: 'mailto:contact@recomby.ai' },
   ],
