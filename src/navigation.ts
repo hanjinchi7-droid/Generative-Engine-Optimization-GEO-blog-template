@@ -34,7 +34,7 @@ export const footerData = {
     {
       title: 'Connect',
       links: [
-        { text: 'GitHub', href: 'https://github.com/recomby-ai' },
+        { text: 'GitHub', href: 'https://hanjinchi7-droid.github.io/Generative-Engine-Optimization-GEO-blog-template/' },
         { text: 'Reddit', href: 'https://www.reddit.com/r/recomby_ai/' },
         { text: 'Email', href: 'mailto:contact@recomby.ai' },
       ],
